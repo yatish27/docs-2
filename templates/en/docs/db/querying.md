@@ -25,7 +25,7 @@ err = db.Where("id in (?)", 1, 2, 3).All(&users)
 ```go
 // Last() orders by created_at
 user := models.User{}
-err := tx.Last(&user)
+err := db.Last(&user)
 ```
 
 ### Find Where
@@ -35,7 +35,7 @@ users := []models.User{}
 query := db.Where("id = 1").Where("name = 'Mark'")
 err := query.All(&users)
 
-err = tx.Where("id in (?)", 1, 2, 3).All(&users)
+err = db.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
 #### Using `in` Queries
